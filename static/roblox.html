@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@800&display=swap');
+    body {
+      font-family: 'Lexend', sans-serif;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>Now.gg Game Player</header>
+  <form onsubmit="goNowgg()">
+    <input class="input" placeholder="Enter a now.gg URL here..." id="url">
+  </form>
+  <div>
+    <h2>Or choose a game below this:</h2>
+    <button onclick="redirectWithProxy('https://now.gg/play/roblox-corporation/5349/roblox');">Roblox</button>
+  </div>
+
+  <!--Scripts-->
+  <script>
+    async function registerSW() {    
+      const workerURL = ".static/sw.js";
+      const worker = await navigator.serviceWorker.getRegistration(workerURL, {
+        scope: __uv$config.prefix,
+      });
+      return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
+    }
+
+    function proxy(url) {
+      registerSW().then(worker => {   
+        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+      });
+    }
+
+    function goNowgg() {
+      var url = document.getElementById("url").value;  
+      var regex = /^https:\/\/now\.gg\/play\/([^/]+)\/(\d+)\/([^/]+)$/;
+      if (regex.test(url)) {
+        proxy(url);
+      } else {
+        alert("Please enter a valid Now.gg URL and try again (Use https:// at the start of your URL)!");
+      }
+    }
+
+    function redirectWithProxy(url) {
+      proxy(url);
+      setTimeout(function() {
+        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+      }, 1000); // Redirect after 1 second
+    }
+  </script>
+  <!--Ultraviolet Scripts-->
+  <script src="static/uv/uv.bundle.js"></script>
+  <script src="static/uv/uv.config.js"></script>
+</body>
+</html>
