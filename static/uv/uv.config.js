@@ -1,5 +1,5 @@
 self.__uv$config = {
-    prefix: '/static/tiw/',
+    prefix: '/static/glacier/',
     bare:'https://juniorhighmaths.tafca.co.uk/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
