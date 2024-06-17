@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
@@ -27,11 +27,15 @@
 <body>
 <div id="particles-js"></div>
 <div id="content">
-    <h1>Glacier Arcade UV</h1>
-    <form id="uv-form">
-        <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/>
-        <input id="uv-address" type="text" placeholder="Search freely with GlacierArcade..." class="form__input"/>
-    </form>
+    <h1>Glacier Arcade</h1>
+  <form id="uv-form">
+      <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
+      <div class="search-container">
+          <input id="uv-address" type="text" placeholder="Search freely with GlacierArcade..." class="form__input" />
+      </div>
+  </form>
+
+
     <div class="desc left-margin">
         <p id="uv-error"></p>
         <pre id="uv-error-code"></pre>
@@ -60,10 +64,16 @@
 <body>
     <div id="particles-js"></div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ 
+<script src="uv/uv.bundle.js" defer></script>
+<script src="uv/uv.config.js" defer></script>
+<script src="register-sw.js" defer></script>
+<script src="search.js" defer></script>
+<script src="index.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
-           
+
     particles: {
                 number: {
                     value: 80,
@@ -164,10 +174,5 @@
             }
         });
     </script>
-<script src="uv/uv.bundle.js" defer></script>
-<script src="uv/uv.config.js" defer></script>
-<script src="register-sw.js" defer></script>
-<script src="search.js" defer></script>
-<script src="index.js" defer></script>
 </body>
 </html>
