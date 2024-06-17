@@ -3,11 +3,59 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.style.opacity = 1;
+
+            setTimeout(function() {
+                loadingScreen.style.opacity = 0;
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 500);
+        });
+        function searchFunction() {
+            var input, filter, gallery, a, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            gallery = document.getElementsByClassName('gallery')[0];
+            a = gallery.getElementsByTagName('a');
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].getAttribute('title');
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = '';
+                } else {
+                    a[i].style.display = 'none';
+                }
+            }
+        }
+
+        function filterByCategory() {
+            var category = document.getElementById('categorySelect').value;
+            var gallery = document.getElementsByClassName('gallery')[0];
+            var a = gallery.getElementsByTagName('a');
+
+            for (var i = 0; i < a.length; i++) {
+                var gameCategory = a[i].getAttribute('data-category');
+
+                if (category === 'all' || gameCategory === category) {
+                    a[i].style.display = '';
+                } else {
+                    a[i].style.display = 'none';
+                }
+            }
+        }
+
+    </script>
+    <div id="loadingScreen">
+        <div class="loader"></div>
+    </div>
     <style>
         /* Center the entire content */
         body {
@@ -23,15 +71,16 @@
             text-align: center;
         }
     </style>
+    
 </head>
 <body>
 <div id="particles-js"></div>
 <div id="content">
-                            <h1 class="gtext">Glacier Arcade</h1>
+    <h1 class="gtext">Glacier Arcade</h1>
   <form id="uv-form">
       <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
       <div class="search-container">
-          <input id="uv-address" type="text" placeholder="Search freely with Glacier Arcade..." class="form__input" />
+          <input id="uv-address" type="text" placeholder="Search freely with GlacierArcade..." class="form__input" />
       </div>
   </form>
 
@@ -59,6 +108,35 @@
             height: 100%;
             z-index: -1;
         }
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: 	#141414; /* Dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Ensure it's above other content */
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.5s ease; /* Smooth fade-in */
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3; /* Light gray border */
+            border-top: 8px solid #111111;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite; /* Smooth spinning animation */
+        }
+
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -70,6 +148,7 @@
 <script src="register-sw.js" defer></script>
 <script src="search.js" defer></script>
 <script src="index.js" defer></script>
+    <script></script>
    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
