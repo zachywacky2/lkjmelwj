@@ -1,117 +1,82 @@
-/* Custom CSS for black theme */
-body {
-    background-color: #0f0f0f;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
+  /* Custom CSS for black theme */
+  body {
+      background-color: #0f0f0f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      font-family: "Lexend", sans-serif;
+  }
 
-#header {
-    background-color: #0f0f0f;
-  padding: 20px;
-  text-align: center;
-}
+  #header {
+      background-color: #0f0f0f;
+      padding: 20px;
+      text-align: center;
+  }
 
-#header h1 {
-  margin: 0;
-  font-size: 24px;
-  font-family: "Lexend", sans-serif;
-  color: #fff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+  #header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+  }
 
-#header img {
-  width: 20%;
-  height: auto;
-}
+  #header img {
+      width: 20%;
+      height: auto;
+  }
 
-#content {
-  text-align: center;
-  padding: 20px;
-  margin-top: -4%;
-}
+  #content {
+      text-align: center;
+      padding: 20px;
+      margin-top: -4%;
+  }
 
-#content h1 {
-  font-size: 24px;
-  cursor:pointer;
-  text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
+  #searchbar {
+      text-align: center;
+      margin: 20px auto;
+  }
 
-#searchbar {
-  text-align: center;
-  margin: 20px auto;
-}
+  .search-container {
+      position: relative;
+      display: inline-block;
+  }
 
-.form__input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 300px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  background-color: #222;
-  text-align: center;
-  color: #fff;
-  cursor:cell;
-}
+  .form__input {
+      padding: 12px; /* increased padding for a more spacious feel */
+      border: none;
+      border-radius: 30px; /* rounded corners */
+      font-size: 16px;
+      width: 300px;
+      max-width: 100%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* slight shadow for depth */
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      background-image: url('lol2.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 95% center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease; /* smooth transition */
+  }
 
-a{
-  text-decoration: none;
-  color:white;
-  width:50px;
-  height:50px;
-  padding-right: 1px;
-  padding-left: 1px;
-  text-align: center;
-  align-self: center;
-}
+  .form__input::placeholder {
+      color: #aaa;
+      text-align: center;
+  }
 
-.form__input::placeholder {
-  color: #aaa;
-  text-align: center;
-}
+  .form__input:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* stronger shadow on focus */
+      transform: scale(1.02); /* slight scale up on focus for interaction */
+  }
 
-.form_input:hover{
-  cursor:cell;
-}
-
-.form__input:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-#footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: #99ccff;
-  font-family: "Lexend", sans-serif;
-  width: 100%;
-  height:15px;
-  background-color: #000;
-  padding-top: 7.5px;
-  padding-bottom: 10px;
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
-}
-
-#footer p {
-  margin: 0;
-}
-
-.fa {
-  font-size: 24px;
-  margin-right: 10px;
-  color: #fff;
-}
-
-.fa:hover {
-  color: #aaa;
-}
+  .search-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff; /* white color */
+      font-size: 18px;
+      cursor: pointer;
+  }
