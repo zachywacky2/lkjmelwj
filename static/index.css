@@ -87,7 +87,6 @@ body {
 .gtext {
   text-shadow: none; /* Removed text shadow for cleaner text */
   font-size: 32px; /* Reduced size for better hierarchy */
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
 
 }
 body {
