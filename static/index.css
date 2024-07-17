@@ -45,23 +45,30 @@ body {
 }
 
 .form__input {
-  padding: 15px 20px; /* Adjusted padding for balance */
-  border: none;
-  border-radius: 5px; /* Subtler rounded corners */
-  font-size: 16px;
-  width: 350px; /* Increased width for better usability */
-  max-width: 100%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Darker shadow for depth */
-  background-color: #242424; /* Darkened input field */
-  color: #f0f0f0;
-  text-align: center;
-  background-image: url('/lol2.png'); /* Assuming lol2.png is your search icon */
-  background-size: 18px;
-  background-repeat: no-repeat;
-  background-position: 95% center;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  font-family: "Lexend", sans-serif;
-}
+    padding: 20px 30px; /* Increased padding for more space */
+    border: none;
+    border-radius: 10px; /* More rounded corners */
+    font-size: 20px; /* Larger font size */
+    width: 400px; /* Wider input field for better usability */
+    max-width: 100%;
+  
+    /* Darker shadow with more blur for emphasis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+    background-color: #1e1e1e; /* Even darker input field */
+    color: #fff; /* White text for better contrast */
+    text-align: center;
+  
+    /* Assuming lol2.png is your search icon */
+    background-image: url('/lol2.png');
+    background-size: 24px; /* Larger search icon */
+    background-repeat: no-repeat;
+    background-position: 97% center; /* More padding from right edge */
+  
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-family: "Lexend", sans-serif;
+  }
+  
 
 .form__input::placeholder {
   color: #d4d4d4;
@@ -80,13 +87,13 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: #f0f0f0; /* White color */
-  font-size: 16px; /* Reduced size to match input field */
+  font-size: 2vw; /* Reduced size to match input field */
   cursor: pointer;
 }
 
 .gtext {
   text-shadow: none; /* Removed text shadow for cleaner text */
-  font-size: 32px; /* Reduced size for better hierarchy */
+  font-size: 3em; /* Reduced size for better hierarchy */
 
 }
 body {
