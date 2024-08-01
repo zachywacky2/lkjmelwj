@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/glacier/',
-    bare:'https://phantom.lol/bare/',
+    bare:'https://1111rw.global.ssl.fastly.net/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
