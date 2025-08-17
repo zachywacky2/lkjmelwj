@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/glacier/',
-    bare:'https://skbiditoi.lat/tspmo/',
+    bare:'https://jesus.greenlifechurch.org/b/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
